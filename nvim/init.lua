@@ -1,6 +1,5 @@
-vim.cmd("set expandtab")
-vim.cmd("set clipboard=unnamedplus")
-vim.g.mapleader = " "
+-- Use the .vimrc
+vim.cmd('source ~/.vimrc')
 
 -- Lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
