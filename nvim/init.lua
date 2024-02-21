@@ -17,20 +17,29 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-    {
+  {
     'nvim-telescope/telescope.nvim', tag = '0.1.5',
       dependencies = { 'nvim-lua/plenary.nvim' }
-    }
+  },
+  {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
 }
 local opts = {}
 
 require("lazy").setup(plugins, opts)
+
+require("catppuccin").setup()
+vim.cmd.colorscheme "catppuccin"
 
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<C-p>", builtin.find_files, {})
 -- only works if ripgrep is installed
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 
+local configs = require("nvim-treesitter.configs")
+configs.setup({
+  ensure_installed = {"lua", "javascript"},
+  highlight = { enable = true },
+  indent = { enable = true },
+})
 
-require("catppuccin").setup()
-vim.cmd.colorscheme "catppuccin"
+
