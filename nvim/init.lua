@@ -19,5 +19,4 @@ local opts = {}
 
 require("lazy").setup("plugins")
 
-vim.keymap.set("n", "<C-n>", ":Neotree reveal left<CR>", {})
 
