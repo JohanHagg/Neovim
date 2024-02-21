@@ -1,5 +1,9 @@
 -- Use the .vimrc
-vim.cmd('source ~/.vimrc')
+vim.cmd("source ~/.vimrc")
+
+vim.cmd("set tabstop=4")
+vim.cmd("set softtabstop=4")
+vim.cmd("set shiftwidth=4")
 
 -- Lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
