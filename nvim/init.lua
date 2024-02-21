@@ -1,5 +1,6 @@
 vim.cmd("set expandtab")
 vim.cmd("set clipboard=unnamedplus")
+vim.g.mapleader = " "
 
 -- Lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -28,6 +29,8 @@ require("lazy").setup(plugins, opts)
 
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<C-p>", builtin.find_files, {})
+-- only works if ripgrep is installed
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 
 
 require("catppuccin").setup()
