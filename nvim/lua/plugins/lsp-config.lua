@@ -12,6 +12,7 @@ return {
         ensure_installed = {
             "lua_ls",
             "tsserver",
+            "svelte",
         }
     })
     end
@@ -23,6 +24,7 @@ return {
 
         lspconfig.lua_ls.setup({})
         lspconfig.tsserver.setup({})
+        lspconfig.svelte.setup({})
 
         vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {})
