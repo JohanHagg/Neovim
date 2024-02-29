@@ -2,7 +2,8 @@ return {
   "lewis6991/gitsigns.nvim",
   config = function()
     require("gitsigns").setup({
-      current_line_blame = true,
+      -- (Currently disabled) To enable git blame inline
+      current_line_blame = false,
     })
   end,
 }
