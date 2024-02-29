@@ -13,6 +13,7 @@ return {
           "lua_ls",
           "tsserver",
           "svelte",
+          "rust_analyzer",
         },
       })
     end,
@@ -27,6 +28,7 @@ return {
       lspconfig.lua_ls.setup({ capabilities = capabilities })
       lspconfig.tsserver.setup({ capabilities = capabilities })
       lspconfig.svelte.setup({ capabilities = capabilities })
+      lspconfig.rust_analyzer.setup({ capabilities = capabilities })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
