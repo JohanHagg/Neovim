@@ -15,7 +15,7 @@ return {
         -- Format before save
         vim.keymap.set("n", "<leader>w", function()
             vim.lsp.buf.format()
-            vim.cmd(":wa")
+            vim.cmd(":w")
         end)
 
         -- Define a function to format the buffer and save the file
