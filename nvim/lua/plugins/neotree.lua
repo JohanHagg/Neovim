@@ -13,6 +13,9 @@ return {
           visible = true,
           hide_dotfiles = false,
         },
+        follow_current_file = {
+          enabled = true,
+        },
       },
     })
 
