@@ -37,6 +37,8 @@ return {
         vim.cmd("norm! zz")
       end, {})
       vim.keymap.set({ "n", "s" }, "<leader>ca", vim.lsp.buf.code_action, {})
+      vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
+      vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {})
     end,
   },
 }
