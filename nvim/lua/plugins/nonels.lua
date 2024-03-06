@@ -11,11 +11,17 @@ return {
     -- Format manually
     vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
 
-    -- Format before save
+    -- Save all files
     vim.keymap.set("n", "<leader>w", function()
-      vim.lsp.buf.format()
-      vim.cmd(":w")
+      vim.cmd(":wa")
     end)
+
+    -- Format on save
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      callback = function()
+        vim.lsp.buf.format()
+      end,
+    })
 
     -- Define a function to format the buffer and save the file
   end,
