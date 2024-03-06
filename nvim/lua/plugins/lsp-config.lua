@@ -16,6 +16,7 @@ return {
           "svelte",
           "rust_analyzer",
           "eslint",
+          "jsonls",
         },
       })
     end,
@@ -33,6 +34,7 @@ return {
       lspconfig.svelte.setup({ capabilities = capabilities })
       lspconfig.rust_analyzer.setup({ capabilities = capabilities })
       lspconfig.eslint.setup({ capabilities = capabilities })
+      lspconfig.jsonls.setup({ capabilities = capabilities })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>D", vim.lsp.buf.declaration, {})
