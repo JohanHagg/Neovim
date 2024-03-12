@@ -17,6 +17,9 @@ return {
           enabled = true,
         },
       },
+      window = {
+        width = 48,
+      },
     })
 
     vim.keymap.set("n", "<leader>e", ":Neotree reveal left<CR>", {})
