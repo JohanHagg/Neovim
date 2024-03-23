@@ -17,6 +17,7 @@ return {
         javascript = { { "prettierd", "prettier" } },
         typescript = { { "prettierd", "prettier" } },
         jsonc = { { "prettierd", "prettier" } },
+        css = { { "prettierd", "prettier" } },
       },
 
       format_on_save = {
