@@ -18,6 +18,7 @@ return {
         typescript = { { "prettierd", "prettier" } },
         jsonc = { { "prettierd", "prettier" } },
         css = { { "prettierd", "prettier" } },
+        vue = { { "prettierd", "prettier" } },
       },
 
       format_on_save = {
