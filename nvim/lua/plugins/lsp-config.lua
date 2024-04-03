@@ -17,6 +17,7 @@ return {
           "rust_analyzer",
           "eslint",
           "jsonls",
+          "vuels",
         },
       })
     end,
@@ -47,6 +48,7 @@ return {
       lspconfig.rust_analyzer.setup({ capabilities = capabilities })
       lspconfig.eslint.setup({ capabilities = capabilities })
       lspconfig.jsonls.setup({ capabilities = capabilities })
+      lspconfig.vuels.setup({ capabilities = capabilities })
 
       -- Use LspAttach autocommand to only map the following keys
       -- after the language server attaches to the current buffer
