@@ -19,6 +19,7 @@ return {
         jsonc = { { "prettierd", "prettier" } },
         css = { { "prettierd", "prettier" } },
         vue = { { "prettierd", "prettier" } },
+        sh = { { "prettierd", "prettier" } },
       },
 
       format_on_save = {

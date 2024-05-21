@@ -19,6 +19,7 @@ return {
           "jsonls",
           "vuels",
           "pylsp",
+          "bashls",
         },
       })
     end,
@@ -45,7 +46,18 @@ return {
       lspconfig.cssls.setup({ capabilities = capabilities })
       lspconfig.lua_ls.setup({ capabilities = capabilities })
       lspconfig.tsserver.setup({ capabilities = capabilities })
-      lspconfig.svelte.setup({ capabilities = capabilities })
+      -- lspconfig.svelte.setup({ capabilities = capabilities })
+      -- To notify the svelte lsp when ts/js files change
+      lspconfig.svelte.setup({
+        on_attach = function(client)
+          vim.api.nvim_create_autocmd("BufWritePost", {
+            pattern = { "*.js", "*.ts" },
+            callback = function(ctx)
+              client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
+            end,
+          })
+        end,
+      })
       lspconfig.rust_analyzer.setup({ capabilities = capabilities })
       lspconfig.eslint.setup({ capabilities = capabilities })
       lspconfig.jsonls.setup({ capabilities = capabilities })
