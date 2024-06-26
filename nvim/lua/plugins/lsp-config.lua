@@ -33,11 +33,11 @@ return {
       -- Global mappings.
       -- See `:help vim.diagnostic.*` for documentation on any of the below functions
       vim.keymap.set("n", "<leader>,", vim.diagnostic.open_float)
-      vim.keymap.set("n", "[d", function()
+      vim.keymap.set("n", "<C-w>", function()
         vim.diagnostic.goto_prev()
         vim.cmd("norm! zz")
       end)
-      vim.keymap.set("n", "]d", function()
+      vim.keymap.set("n", "<C-e>", function()
         vim.diagnostic.goto_next()
         vim.cmd("norm! zz")
       end)
