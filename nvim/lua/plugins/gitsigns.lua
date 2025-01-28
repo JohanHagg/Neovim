@@ -19,14 +19,6 @@ return {
         -- TODO: Find better key binding to use Ctrl
         map("n", "<leader>tn", gitsigns.next_hunk)
 
-        map("n", "[c", function()
-          if vim.wo.diff then
-            vim.cmd.normal({ "[c", bang = true })
-          else
-            gitsigns.nav_hunk("prev")
-          end
-        end)
-
         -- Preview hunk as popout modal
         map("n", "<leader>tp", gitsigns.preview_hunk)
         -- Preview hunk inline
