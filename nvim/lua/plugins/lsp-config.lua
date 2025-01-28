@@ -18,7 +18,6 @@ return {
           "eslint",
           "jsonls",
           "vuels",
-          "pylsp",
           "bashls",
         },
       })
@@ -62,7 +61,6 @@ return {
       lspconfig.eslint.setup({ capabilities = capabilities })
       lspconfig.jsonls.setup({ capabilities = capabilities })
       lspconfig.vuels.setup({ capabilities = capabilities })
-      lspconfig.pylsp.setup({ capabilities = capabilities })
 
       -- Use LspAttach autocommand to only map the following keys
       -- after the language server attaches to the current buffer
