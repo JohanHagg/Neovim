@@ -12,7 +12,7 @@ return {
         ensure_installed = {
           "cssls",
           "lua_ls",
-          "tsserver",
+          "ts_ls",
           "svelte",
           "rust_analyzer",
           "eslint",
