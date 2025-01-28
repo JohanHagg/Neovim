@@ -45,7 +45,7 @@ return {
 
       lspconfig.cssls.setup({ capabilities = capabilities })
       lspconfig.lua_ls.setup({ capabilities = capabilities })
-      lspconfig.tsserver.setup({ capabilities = capabilities })
+      lspconfig.ts_ls.setup({ capabilities = capabilities })
       -- lspconfig.svelte.setup({ capabilities = capabilities })
       -- To notify the svelte lsp when ts/js files change
       lspconfig.svelte.setup({
