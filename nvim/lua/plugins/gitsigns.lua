@@ -16,9 +16,8 @@ return {
         -- map("n", "<leader>ts", gitsigns.stage_hunk)
         map("n", "<leader>tu", gitsigns.reset_hunk)
 
-        -- TODO: Find better key binding to use Ctrl
-        map("n", "<leader>tn", gitsigns.next_hunk)
-
+        map("n", "<C-m>", gitsigns.prev_hunk)
+        map("n", "<C-n>", gitsigns.next_hunk)
         -- Preview hunk as popout modal
         map("n", "<leader>tp", gitsigns.preview_hunk)
         -- Preview hunk inline
