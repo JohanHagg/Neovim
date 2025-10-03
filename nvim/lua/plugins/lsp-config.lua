@@ -50,6 +50,18 @@ return {
       vim.lsp.config("ts_ls", {
         capabilities = capabilities,
       })
+
+      vim.lsp.config("svelte", {
+        on_attach = function(client)
+          vim.api.nvim_create_autocmd("BufWritePost", {
+            pattern = { "*.js", "*.ts" },
+            callback = function(ctx)
+              client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
+            end,
+          })
+        end,
+      })
+
       -- lspconfig.svelte.setup({ capabilities = capabilities })
       -- To notify the svelte lsp when ts/js files change
       -- lspconfig.svelte.setup({
