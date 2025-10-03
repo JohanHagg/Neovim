@@ -14,12 +14,12 @@ return {
         -- Conform will run multiple formatters sequentially
         python = { "isort", "black" },
         -- Use a sub-list to run only the first available formatter
-        javascript = { { "prettierd", "prettier" } },
-        typescript = { { "prettierd", "prettier" } },
-        jsonc = { { "prettierd", "prettier" } },
-        css = { { "prettierd", "prettier" } },
-        vue = { { "prettierd", "prettier" } },
-        sh = { { "prettierd", "prettier" } },
+        javascript = { "prettierd", "prettier" },
+        typescript = { "prettierd", "prettier" },
+        jsonc = { "prettierd", "prettier" },
+        css = { "prettierd", "prettier" },
+        vue = { "prettierd", "prettier" },
+        sh = { "prettierd", "prettier" },
       },
 
       format_on_save = {
