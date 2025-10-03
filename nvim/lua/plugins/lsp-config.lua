@@ -27,7 +27,6 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      local lspconfig = require("lspconfig")
 
       -- Global mappings.
       -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -42,25 +41,35 @@ return {
       end)
       -- vim.keymap.set("n", "<leader>z", vim.diagnostic.setloclist)
 
-      lspconfig.cssls.setup({ capabilities = capabilities })
-      lspconfig.lua_ls.setup({ capabilities = capabilities })
-      lspconfig.ts_ls.setup({ capabilities = capabilities })
+      vim.lsp.config("cssls", {
+        capabilities = capabilities,
+      })
+      vim.lsp.config("lua_ls", {
+        capabilities = capabilities,
+      })
+      vim.lsp.config("ts_ls", {
+        capabilities = capabilities,
+      })
       -- lspconfig.svelte.setup({ capabilities = capabilities })
       -- To notify the svelte lsp when ts/js files change
-      lspconfig.svelte.setup({
-        on_attach = function(client)
-          vim.api.nvim_create_autocmd("BufWritePost", {
-            pattern = { "*.js", "*.ts" },
-            callback = function(ctx)
-              client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
-            end,
-          })
-        end,
+      -- lspconfig.svelte.setup({
+      --   on_attach = function(client)
+      --     vim.api.nvim_create_autocmd("BufWritePost", {
+      --       pattern = { "*.js", "*.ts" },
+      --       callback = function(ctx)
+      --         client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
+      --       end,
+      --     })
+      --   end,
+      -- })
+      vim.lsp.config("rust_analyzer", {
+        capabilities = capabilities,
       })
-      lspconfig.rust_analyzer.setup({ capabilities = capabilities })
-      lspconfig.eslint.setup({ capabilities = capabilities })
-      lspconfig.jsonls.setup({ capabilities = capabilities })
-      lspconfig.vuels.setup({ capabilities = capabilities })
+      vim.lsp.config("eslint", {
+        capabilities = capabilities,
+      })
+      vim.lsp.config("jsonls", { capabilities = capabilities })
+      vim.lsp.config("vuels", { capabilities = capabilities })
 
       -- Use LspAttach autocommand to only map the following keys
       -- after the language server attaches to the current buffer
